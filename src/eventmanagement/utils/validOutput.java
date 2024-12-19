@@ -2,26 +2,25 @@ package eventmanagement.utils;
 
 import java.util.Scanner;
 
-public class validOutput {
+package eventmanagement.utils;
 
-    public static String getString(Scanner sc) {
-        String input = sc.nextLine().trim().toLowerCase();
-        return input;
+public class ValidOutput {
+
+    // Method to get a trimmed and lowercased string from Scanner
+    public static String getTrimmedLowercaseString(Scanner sc) {
+        return sc.nextLine().trim().toLowerCase();
     }
 
+    // Method to clear the console screen
     public static void clearScreen() {
+        // This method is meant for console applications
         for (int i = 0; i < 100; i++) {
-            System.out.println(" ");
+            System.out.println();
         }
     }
 
+    // Method to pad a string with spaces to a specified length
     public static String padSpaces(String value, int length) {
-        int spacesToAdd = length - value.length();
-        StringBuilder spaces = new StringBuilder();
-
-        for (int i = 0; i < spacesToAdd; i++) {
-            spaces.append(" ");
-        }
-        return spaces.toString();
+        return String.format("%-" + length + "s", value);
     }
 }
